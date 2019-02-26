@@ -1,13 +1,10 @@
 <template>
   <div class="app-phone">
-    <div class="phone-header">
-        <span class="mui-icon mui-icon-arrowleft"></span>
-        <span>美图手机</span>
-        <span class="mui-icon mui-icon-home"></span>
-    </div>
+    <header-box></header-box>
+    <p class="head">美图手机</p>
     <ul class="mui-table-view">
       <li class="mui-table-view-cell mui-media" v-for="item of list" :key="item.id">
-        <router-link to="" class="wrap">
+        <router-link :to="'/PhoneInfo?pid='+item.id"  class="wrap">
           <img class="mui-media-object mui-pull-left" :src="item.img_url">
           <div class="mui-media-body">{{item.title}}
             <p class="mui-ellipsis">{{item.phone_desc}}</p>
@@ -16,31 +13,12 @@
         </router-link>
       </li>
     </ul>
-    <mt-button type="primary" size="large">加载更多</mt-button>
-    <nav class="mui-bar mui-bar-tab">
-    <a class="mui-tab-item mui-active" href="#tabbar">
-    <span class="mui-icon mui-icon-home"></span>
-    <span class="mui-tab-label">首页</span>
-    </a>
-    <a class="mui-tab-item" href="#tabbar-with-chat">
-    <span class="mui-icon mui-icon-contact">
-    </span>
-    <span class="mui-tab-label">会员</span>
-    </a>
-    <a class="mui-tab-item" href="#tabbar-with-contact">
-    <span class="mui-icon mui-icon-extra mui-icon-extra-cart">
-    <span class="mui-badge">0</span>
-    </span>
-    <span class="mui-tab-label">购物车</span>
-    </a>
-    <a class="mui-tab-item" href="#tabbar-with-map">
-    <span class="mui-icon mui-icon-search"></span>
-    <span class="mui-tab-label">搜索</span>
-    </a>
-  </nav>
+    <mt-button type="primary" size="large" @click="getPhoneList">加载更多</mt-button>
+
   </div>
 </template>
 <script>
+import Header from './sub/header.vue'
 export default {
   data() {
     return {
@@ -59,19 +37,26 @@ export default {
         var rows = this.list.concat(result.data.data);
         this.list = rows;
       });
+    },
+    jump(){
+      history.go(-1);
     }
   },
   created() {
     this.getPhoneList();
-  }
+  },
+  components:{
+    "header-box":Header,
+}
 };
 </script>
 <style scoped>
-div.phone-header{
-    display:flex;
-    background:#fff;
-    justify-content:space-between;
-    padding:14px 10px ;
+p.head{
+  position:absolute;
+  top:15px;
+  left:42%;
+  font-size:18px;
+  color:#000;
 }
 .mui-table-view img.mui-media-object{
     max-width:96px;

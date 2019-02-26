@@ -49,13 +49,13 @@
     </div>
     <swiper :options="swiperOption1" ref="mySwiper">
       <swiper-slide>
-        <img src="http://mshopimg1.meitudata.com/577b6c126884c98714.jpg" alt="">
+        <img src="http://127.0.0.1:3000/img/produce-1.jpg" alt="">
       </swiper-slide>
       <swiper-slide>
-        <img src="http://mshopimg2.meitudata.com/584545674579f47971.jpg" alt="">
+        <img src="http://127.0.0.1:3000/img/produce-2.jpg" alt="">
       </swiper-slide>
       <swiper-slide>
-        <img src="http://mshopimg4.meitudata.com/57ba9c0ec94f532807.jpg" alt="">
+        <img src="http://127.0.0.1:3000/img/produce-3.jpg" alt="">
       </swiper-slide>
     </swiper>
     <!--美图专区  -->
@@ -77,11 +77,11 @@
     <span class="mui-icon mui-icon-home"></span>
     <span class="mui-tab-label">首页</span>
     </a>
-    <a class="mui-tab-item" href="#tabbar-with-chat">
+    <router-link class="mui-tab-item" href="#tabbar-with-chat" to="/Login">
     <span class="mui-icon mui-icon-contact">
     </span>
     <span class="mui-tab-label">会员</span>
-    </a>
+    </router-link>
     <a class="mui-tab-item" href="#tabbar-with-contact">
     <span class="mui-icon mui-icon-extra mui-icon-extra-cart">
     <span class="mui-badge">0</span>
@@ -170,8 +170,8 @@
  /*九宫格  图片宽度*/
  .app-home .mui-grid-9 .grid{
    border-radius: 50%;
-   width:4.5rem;
-   height:4.5rem;
+   width:4rem;
+   height:4rem;
    position:relative;
    display: block;
  }
