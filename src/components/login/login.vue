@@ -1,10 +1,6 @@
 <template>
     <div class="app-login">
-        <div class="login-header">
-            <span class="mui-icon mui-icon-arrowleft" @click="jump"></span>
-            <span>美图账号</span>
-            <router-link class="mui-icon mui-icon-home" to="/Home"></router-link>
-        </div>
+        <navBar title="美图账号"></navBar>
         <div class="login">
             <div class="login-main">
               <form>
