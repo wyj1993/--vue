@@ -1,6 +1,6 @@
 <template>
     <div class="app-phoneInfo">
-
+        <nav-bar></nav-bar>
         <mt-swipe>
             <mt-swipe-item v-for="item in list" :key="item.id">
                 <img :src="item.img_url" />
@@ -9,7 +9,7 @@
         <div class="settings">
             <p>规格</p>
             <ul>
-                <li v-for="item of list" :key="item.id">
+                <li v-for="(item,index) of list" :key="item.id"   @click="changeLiStyle"  :data-idx="index" :class="{red:idx===index}">
                     <p><span class="title">{{item.title}}</span><span class="price">￥{{item.price}}</span></p>
                     <p class="size">{{item.specs}}</p>
                 </li>
@@ -23,15 +23,16 @@
         <!--底部-->
         <div class="bottom">
             <p class="time">抢购时间：06月16日 12:00</p>
-            <router-link to="">立即预约</router-link>
+            <router-link to="" @click.native='appoint'>立即预约</router-link>
         </div>
     </div>
 </template>
 <script>
-   
+    import {Toast} from 'mint-ui'
     export default {
         data(){
             return {
+               idx:null,
                list:[],
                s1:"border:1px solid #f00",
                s2:"border:1px solid #ccc"
@@ -55,6 +56,14 @@
                 this.s1="border:1px solid #ccc";
                 this.s2="border:1px solid #f00"
             },
+            appoint(){
+                /*router-link会阻止点击事件，加上native就会触发*/
+                Toast("预约成功");
+            },
+            changeLiStyle(e){
+               var i=e.currentTarget.dataset.idx;
+               this.idx=Number(i);
+            }
         },
         created() {
             this.getPhoneImage();
@@ -106,6 +115,7 @@
      ul.color{
          margin-bottom:50px;
      }
+     ul li.red{border :1px solid red}
      ul.color,ul.color li{display: flex;flex-wrap: nowrap;justify-content: center}
      ul.color li{padding:15px 25px;margin-right:20px;border:1px solid #ddd}
      ul.color li:first-child i{background:#f55669;border-radius:50%;display: block;width:15px;height:15px;margin-right:10px}

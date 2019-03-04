@@ -12,12 +12,14 @@ import {Header,Swipe,SwipeItem,Button} from "mint-ui"
 import Moment from 'moment';
 //引入自定义全局组件
 import navBar from './components/sub/navBar.vue'
+import tabBar from './components/sub/tabBar.vue'
 //4:注册Header组件
 Vue.component(Header.name,Header);
 Vue.component(Swipe.name,Swipe);
 Vue.component(SwipeItem.name,SwipeItem);
 Vue.component(Button.name,Button);
-Vue.component("navBar",navBar);
+Vue.component("nav-bar",navBar);
+Vue.component("tab-bar",tabBar);
 //5:引入 axios库
 import axios from "axios"
 //6:配置跨域访问保存session

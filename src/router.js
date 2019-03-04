@@ -8,6 +8,13 @@ import PhoneInfo from "./components/phone/phoneInfo.vue"
 import Login from "./components/login/login.vue"
 import newsList from './components/news/newsList.vue'
 import newsInfo from './components/news/newsInfo.vue'
+import partsList  from './components/parts/partsList.vue'
+import goods  from './components/parts/goods.vue'
+import list1  from './components/parts/list1.vue'
+import list2  from './components/parts/list2.vue'
+import list3  from './components/parts/list3.vue'
+import listError from './components/parts/listError.vue'
+import Detail from './components/parts/detail.vue'
 Vue.use(Router)
 export default new Router({
   routes: [
@@ -20,6 +27,14 @@ export default new Router({
     {path:'/Login',component:Login},
     {path:"/newsList",component:newsList},
     {path:"/newsInfo",component:newsInfo},
+    {path:"/partsList",component:partsList,children:[
+      {path:'/partsList/goods',component:goods},
+      {path:'/list1',component:list1},
+      {path:'/list2',component:list2},
+      {path:'/list3',component:list3},
+      {path:'/listError',component:listError}
+    ]},
+    {path:'/detail',component:Detail}
   ],
   linkActiveClass:"mui-active",
 });

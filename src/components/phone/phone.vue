@@ -1,6 +1,6 @@
 <template>
   <div class="app-phone">
-    <navBar title="美图手机"></navBar>
+    <nav-bar title="美图手机"></nav-bar>
     <ul class="mui-table-view">
       <li class="mui-table-view-cell mui-media" v-for="item of list" :key="item.id">
         <router-link :to="'/PhoneInfo?pid='+item.id"  class="wrap">

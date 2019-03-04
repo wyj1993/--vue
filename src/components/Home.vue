@@ -16,8 +16,7 @@
      </mt-swipe-item>
    </mt-swipe>
    <!--九宫格 -->
-    <ul class="mui-table-view mui-grid-view mui-grid-9">
-      
+    <ul class="mui-table-view mui-grid-view mui-grid-9">   
         <li class=" mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3">
           <router-link to="/phone" class="grid phone">
           <img src="http://127.0.0.1:3000/img/phone.png" />
@@ -25,7 +24,7 @@
           <div class="media-body">手机</div>
         </li>
         <li class=" mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3">
-          <router-link to="/NewsList" class="grid peijian">
+          <router-link to="/partsList/goods" class="grid peijian">
           <img src="http://127.0.0.1:3000/img/view_icon_06.png" />
           </router-link>
           <div class="media-body">配件</div>
@@ -72,7 +71,7 @@
 		    </ul> 
     </div>
     <!-- 底部导航栏 -->
- 
+    <tab-bar></tab-bar>
 </div>
 </template>
 <script>
