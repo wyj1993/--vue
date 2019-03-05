@@ -4,7 +4,7 @@
             <li class="content-item" v-for="item of goods" :key="item.id"  v-bind:data-id="item.id" @click="jumpDetail">
                 <img  :src="item.img_url">
                 <p class="title">{{item.title}}</p>
-                <p class="price">{{item.price}}</p>
+                <p class="price">￥{{item.price}}</p>
             </li>
         </ul>
     </div>

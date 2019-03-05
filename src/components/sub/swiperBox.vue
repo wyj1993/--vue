@@ -17,6 +17,11 @@ export default {
 </script>
 <style scoped>
     div.app-swiper{
-        height:200px;
+      height:250px;
     }
+    div.mint-swipe-item img{
+      width:100%;
+      height:100%;
+    }
+    
 </style>

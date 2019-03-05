@@ -15,6 +15,13 @@
      padding-bottom:50px;
      overflow-x:hidden;
    } */
+   ul{
+      margin:0;
+      padding:0;
+   }
+  li{
+     list-style: none;
+  }
  .mui-bar-tab .mui-tab-item-tao.mui-active {
     color: #007aff;
  }
