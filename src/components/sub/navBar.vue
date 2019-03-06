@@ -25,7 +25,13 @@ export default {
     background:#fff;
     justify-content:space-between;
     padding:14px 10px ;
+    position: fixed;
+    top:0px;
+    z-index: 1;
+    width:100%;
+    border-bottom:1px solid #eeeeee;
 }
+
 a.mui-icon.mui-icon-home{
   color:#000;
 }

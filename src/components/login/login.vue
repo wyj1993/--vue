@@ -1,6 +1,7 @@
 <template>
     <div class="app-login">
         <nav-bar title="美图账号"></nav-bar>
+            <div class="headPlaceHolder"></div>
         <div class="login">
             <div class="login-main">
               <form>

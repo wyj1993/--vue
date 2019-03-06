@@ -15,13 +15,19 @@
      padding-bottom:50px;
      overflow-x:hidden;
    } */
-   ul{
+   ul,p{
       margin:0;
       padding:0;
    }
   li{
      list-style: none;
   }
+  a,span.mui-icon{color:#000}
+  div.headPlaceHolder{
+    background:#fff;
+    width:100%;
+    height:56px;
+}
  .mui-bar-tab .mui-tab-item-tao.mui-active {
     color: #007aff;
  }

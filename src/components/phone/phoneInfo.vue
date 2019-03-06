@@ -1,6 +1,7 @@
 <template>
     <div class="app-phoneInfo">
         <nav-bar></nav-bar>
+        <div class="headPlaceHolder"></div>
         <mt-swipe>
             <mt-swipe-item v-for="item in list" :key="item.id">
                 <img :src="item.img_url" />
