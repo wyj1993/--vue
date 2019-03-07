@@ -98,6 +98,21 @@ export default {
         this.axios.get(url).then(result=>{
            if(result.data.code == 1){
              Toast("添加成功");
+             var aa=sessionStorage.getItem('a');
+            //  console.log(aa);
+            //  console.log(typeof(aa));
+            //  console.log(JSON.parse(aa));
+            var idArray = JSON.parse(aa);
+            var hadFind = false;
+            idArray.forEach(element => {
+              if(element === fid){
+               hadFind = true;
+              }
+            });
+            if(!hadFind){
+              // idArray
+              this.$store.commit('increment')
+            }
            }else{
              Toast("请登录");
            }

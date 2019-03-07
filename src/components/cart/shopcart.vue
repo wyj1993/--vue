@@ -87,6 +87,11 @@ export default {
           item.cb = false;
           item.val=item.count;
         }
+        var arr=[1,0,2];
+        console.log(arr);
+        var arr1=JSON.stringify(arr);
+        console.log(typeof(arr1));
+       sessionStorage.setItem('a',arr1)
         this.list = rows;
         this.$store.commit("updateCount", this.list.length);
       });
