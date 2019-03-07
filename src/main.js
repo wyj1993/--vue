@@ -1,6 +1,7 @@
 import Vue from 'vue'
 import App from './App.vue'
 import router from './router'
+import Vuex from 'vuex'
 //1:引入mint-ui 样式文件
 import'mint-ui/lib/style.css'
 Vue.config.productionTip = false
@@ -20,6 +21,29 @@ Vue.component(SwipeItem.name,SwipeItem);
 Vue.component(Button.name,Button);
 Vue.component("nav-bar",navBar);
 Vue.component("tab-bar",tabBar);
+Vue.use(Vuex);
+var store=new Vuex.Store({
+  state:{
+    cartCount:sessionStorage.getItem('cartCount')||0//共享数据：购物车中商品数量
+  },
+  mutations:{
+    //购物车中数量加1
+    increment(state){
+      state.cartCount++;
+    },
+    //显示购物车列表时
+    updateCount(state,count){
+        state.cartCount=count;
+        sessionStorage.setItem('cartCount',count);
+    }
+  },
+  getters:{
+    //获取购物车中数量方法
+     optCartCount:function(state){
+       return state.cartCount;
+     }
+  }
+})
 //5:引入 axios库
 import axios from "axios"
 //6:配置跨域访问保存session
@@ -68,10 +92,9 @@ Vue.filter('convertDate',function(value){
 })
 
 
-
-
 new Vue({
   router,
   VueAwesomeSwiper,
+  store,
   render: h => h(App)
 }).$mount('#app')

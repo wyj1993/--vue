@@ -1,6 +1,7 @@
 <template>
   <div class="app-detail">
     <nav-bar></nav-bar>
+    <div class="headPlaceHolder"></div>
     <swiper-box :list="list"></swiper-box>
     <div class="detail">
       <p class="title">{{info.title}}</p>
@@ -44,11 +45,7 @@
     <!--底部-->
       <div class="bottom">
         <p class="time">
-          <router-link to='/shopCart'>
-              <span class="mui-icon-extra mui-icon mui-icon-extra-cart">
-              <span class="mui-badge">0</span>
-              </span>
-          </router-link>
+         
         </p>
           <router-link :to='id' class='btn' @click.native='addCart($event)'>加入购物车</router-link>
           <router-link :to="id" class='buy btn'>立即购买</router-link>
@@ -99,7 +96,6 @@ export default {
         url+="addcart?fid="+fid;
         url+="&price="+price;
         this.axios.get(url).then(result=>{
-          console.log(result);
            if(result.data.code == 1){
              Toast("添加成功");
            }else{
